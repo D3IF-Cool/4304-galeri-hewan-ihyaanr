@@ -29,16 +29,17 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getData(): List<Hewan> {
         return listOf(
-            Hewan("Angsa", "Cygnus olor"),
-            Hewan("Ayam", "Gallus gallus"),
-            Hewan("Bebek", "Cairina moschata"),
-            Hewan("Domba", "Ovis ammon"),
-            Hewan("Kalkun", "Meleagris gallopavo"),
-            Hewan("Kambing", "Capricornis sumatrensis"),
-            Hewan("Kelinci", "Oryctolagus cuniculus"),
-            Hewan("Kerbau", "Bubalus bubalis"),
-            Hewan("Kuda", "Equus caballus"),
-            Hewan("Sapi", "Bos taurus"),
-        )
+            Hewan("Angsa", "Cygnus olor", R.drawable.angsa, "Unggas"),
+            Hewan("Ayam", "Gallus gallus", R.drawable.ayam, "Unggas"),
+            Hewan("Bebek", "Cairina moschata", R.drawable.bebek, "Unggas"),
+            Hewan("Domba", "Ovis ammon", R.drawable.domba, "Mammalia"),
+            Hewan("Kalkun", "Meleagris gallopavo", R.drawable.kalkun, "Aves"),
+            Hewan("Kambing", "Capricornis sumatrensis", R.drawable.kambing, "Mammalia"),
+            Hewan("Kelinci", "Oryctolagus cuniculus", R.drawable.kelinci, "Mammalia"),
+            Hewan("Kerbau", "Bubalus bubalis", R.drawable.kerbau, "Mammalia"),
+            Hewan("Kuda", "Equus caballus", R.drawable.kuda, "Mammalia"),
+            Hewan("Sapi", "Bos taurus", R.drawable.sapi, "Mammalia"),
+
+            )
     }
 }

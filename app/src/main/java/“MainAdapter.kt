@@ -11,6 +11,8 @@ class MainAdapter(private val data: List<Hewan>) :
         fun bind(hewan: Hewan) = with(binding) {
             namaTextView.text = hewan.nama
             latinTextView.text = hewan.namaLatin
+            imageView.setImageResource(hewan.imageResId)
+            jenisTextView.text = hewan.jenis
         }
     }
 
@@ -23,7 +25,6 @@ class MainAdapter(private val data: List<Hewan>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(data[position])
     }
-
 
     override fun getItemCount(): Int {
         return data.size
