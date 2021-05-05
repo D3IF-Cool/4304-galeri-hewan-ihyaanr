@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import org.d3if0004.galerihewan2.model.Hewan
-import org.d3if0004.galerihewan2.R
 import org.d3if0004.galerihewan2.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {

@@ -25,18 +25,18 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    // Data ini akan kita ambil dari server di langkah selanjutnya
-    private fun initData(): List<Hewan> {
-        return listOf(
-            Hewan("Ayam", "Gallus gallus", R.drawable.ayam),
-            Hewan("Bebek", "Cairina moschata", R.drawable.bebek),
-            Hewan("Domba", "Ovis ammon", R.drawable.domba),
-            Hewan("Kalkun", "Meleagris gallopavo", R.drawable.kalkun),
-            Hewan("Kambing", "Capricornis sumatrensis", R.drawable.kambing),
-            Hewan("Kelinci", "Oryctolagus cuniculus", R.drawable.kelinci),
-            Hewan("Kerbau", "Bubalus bubalis", R.drawable.kerbau),
-            Hewan("Sapi", "Bos taurus", R.drawable.sapi),
-        )
-    }
+//    // Data ini akan kita ambil dari server di langkah selanjutnya
+//    private fun initData(): List<Hewan> {
+//        return listOf(
+//            Hewan("Ayam", "Gallus gallus", R.drawable.ayam),
+//            Hewan("Bebek", "Cairina moschata", R.drawable.bebek),
+//            Hewan("Domba", "Ovis ammon", R.drawable.domba),
+//            Hewan("Kalkun", "Meleagris gallopavo", R.drawable.kalkun),
+//            Hewan("Kambing", "Capricornis sumatrensis", R.drawable.kambing),
+//            Hewan("Kelinci", "Oryctolagus cuniculus", R.drawable.kelinci),
+//            Hewan("Kerbau", "Bubalus bubalis", R.drawable.kerbau),
+//            Hewan("Sapi", "Bos taurus", R.drawable.sapi),
+//        )
+//    }
     fun getData(): LiveData<List<Hewan>> = data
 }
