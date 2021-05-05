@@ -1,5 +1,6 @@
 package org.d3if0004.galerihewan2.ui.main
 
+import ApiStatus
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,24 @@ class MainFragment : Fragment() {
         viewModel.getData().observe(viewLifecycleOwner, {
             myAdapter.updateData(it)
         })
+        viewModel.getStatus().observe(viewLifecycleOwner, {
+            updateProgress(it)
+        })
+    }
+
+    private fun updateProgress(status: ApiStatus) {
+        when (status) {
+            ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+            }
+            ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
+        }
     }
 
 }

@@ -1,5 +1,6 @@
 package org.d3if0004.galerihewan2.ui.main
 
+import ApiStatus
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,17 +11,24 @@ import org.d3if0004.galerihewan2.R
 import org.d3if0004.galerihewan2.model.Hewan
 
 class MainViewModel : ViewModel() {
+
     private val data = MutableLiveData<List<Hewan>>()
+    private val status = MutableLiveData<ApiStatus>()
+
     init {
         retrieveData()
     }
 
     private fun retrieveData() {
         viewModelScope.launch {
+            status.value = ApiStatus.LOADING
             try {
                 data.value = HewanApi.service.getHewan()
+                status.value = ApiStatus.SUCCESS
             } catch (e: Exception) {
                 Log.d("MainViewModel", "Failure: ${e.message}")
+                status.value = ApiStatus.FAILED
+
             }
         }
     }
@@ -38,5 +46,8 @@ class MainViewModel : ViewModel() {
 //            Hewan("Sapi", "Bos taurus", R.drawable.sapi),
 //        )
 //    }
+
     fun getData(): LiveData<List<Hewan>> = data
+
+    fun getStatus(): LiveData<ApiStatus> = status
 }
